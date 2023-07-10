@@ -9,21 +9,25 @@ print(clue_list)
 whole_letters =string.ascii_letters
 #print(whole_letters)
 
-heartlist=list("\u2764\ufe0f"*9)
+heartlist=list("\u2764"*9)
 
 word = 'mirkos'
 clu = ['?','?','?','?','?','?']
-while True:
+while heartlist :
     guess= input('guess you letter ')
-    if word.count(guess) > 0:
+    if guess not in whole_letters:
+        guess= input('PLEASE ENTER ONLY LETTERS ')
+    if guess in word and guess not in clu:
+        num_lettrs= word.count(guess)
+        
         ind = word.index(guess)
         clu[ind]=guess
-        #for i,l in enumerate(word):
-            #ln= word.count(l)
-           # for i in range(ln):
-    elif word.count(guess) == 0:
+        print(''.join(clu),'<< this is your guess so far ',f'you have {len(heartlist)} lives left',sep=' ')
+        
+    else:
         print('you lost one of your heart')
         heartlist.pop()
+        print(heartlist,f'only this {len(heartlist)} lives left')
     if '?' not in clu:
         print('well done',''.join(clu))
         break
