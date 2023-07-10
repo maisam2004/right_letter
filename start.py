@@ -1,5 +1,12 @@
 import string,random
 from wonderwords import RandomWord
 
-generator = RandomWord()
+word_generator = RandomWord()
+the_word = word_generator.word()
 
+clue_list=list('?'*len(the_word))
+print(clue_list)
+whole_letters =string.ascii_letters
+print(whole_letters)
+
+print("\u2764\ufe0f")
