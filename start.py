@@ -6,7 +6,7 @@ word_generator = RandomWord()
 the_word = word_generator.word()
 
 clue_list=list('?'*len(the_word))
-cu=list('?'*len(the_word))
+
 
 whole_letters =string.ascii_letters
 #print(whole_letters)
