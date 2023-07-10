@@ -5,26 +5,25 @@ word_generator = RandomWord()
 the_word = word_generator.word()
 
 clue_list=list('?'*len(the_word))
-print(clue_list)
+cu=list('?'*len(the_word))
+
 whole_letters =string.ascii_letters
 #print(whole_letters)
 
 heartlist=list("\u2764"*9)
 
-
+all_guesses =''
 
 while heartlist :
     guess= input('guess you letter ') #request letter
     if guess not in whole_letters:
         guess= input('PLEASE ENTER ONLY LETTERS ') #request letter if first try did not enter nubmer
+    all_guesses += guess
     if guess in the_word and guess not in clue_list:
-        num_lettrs= the_word.count(guess) #find the number of times letters in word
-        new_word = the_word #copy of main word
-        for _ in range(num_lettrs): # loop to remove any doble letters
-            ind = new_word.index(guess)
-            
-            clue_list[ind]=guess
-            new_word = new_word.replace(new_word[ind],'_',1)
+        
+        for i,l in enumerate(the_word): # loop to remove any doble letters
+            if l == guess:
+                clue_list[i] = guess
 
         print(''.join(clue_list),'<< this is your guess so far ',f'you have {len(heartlist)} lives left',sep=' ')
         
@@ -37,3 +36,4 @@ while heartlist :
         break
 
 print(f'the word was>>{the_word}')
+print('all of your guesses >>','-'.join(list(all_guesses)))
