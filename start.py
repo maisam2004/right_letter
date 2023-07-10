@@ -11,7 +11,7 @@ whole_letters =string.ascii_letters
 
 heartlist=list("\u2764"*9)
 
-word = 'mirkos'
+word = 'mirros'
 clu = ['?','?','?','?','?','?']
 while heartlist :
     guess= input('guess you letter ')
@@ -19,9 +19,12 @@ while heartlist :
         guess= input('PLEASE ENTER ONLY LETTERS ')
     if guess in word and guess not in clu:
         num_lettrs= word.count(guess)
-        
-        ind = word.index(guess)
-        clu[ind]=guess
+        for _ in range(num_lettrs):
+            ind = word.index(guess)
+            print(ind,'this index of letter')
+            clu[ind]=guess
+            word = word.replace(word[ind],'_',1)
+
         print(''.join(clu),'<< this is your guess so far ',f'you have {len(heartlist)} lives left',sep=' ')
         
     else:
