@@ -1,4 +1,5 @@
-import string,random
+import string
+import random
 from wonderwords import RandomWord
 
 word_generator = RandomWord()
