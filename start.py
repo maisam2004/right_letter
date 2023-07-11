@@ -30,7 +30,7 @@ while heartlist :
         
     else:
         print('you lost one of your heart')
-        heartlist.pop() #remove one heart
+        heartlist.pop() #remove one heart >>lose live
         print(heartlist,f'only this {len(heartlist)} lives left')
     if '?' not in clue_list:
         print('well done the word was > ',''.join(clue_list),''.join(set(heartlist)))
