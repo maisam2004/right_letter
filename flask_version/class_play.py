@@ -2,25 +2,25 @@ import string
 from wonderwords import RandomWord
 
 class let_guess:
-    def __init__(self,letter) :
+    def __init__(self) :
         self.word_generator = RandomWord()
         self.the_word =self.word_generator.word()
         self.whole_letters = string.ascii_letters
         self.clue_list = ['?']*len(self.the_word)
         self.heartlist = list("\u2764" * 9)
         self.all_guesses = ''
-        self.letter = letter
+        #self.letter = letter
 
     def play(self):
         while self.heartlist :
-            #guess= input('guess you letter ') #request letter
+            guess= input('guess you letter ') #request letter
             guess = self.letter
             guess = self.check_guess(guess)
             self.all_guesses += guess 
             if guess in self.the_word and guess not in self.clue_list:
 
                 self.clue_list=self.righ_loop(guess)
-                print(''.join(self.clue_list),'<< this is your guess so far ',f'you have {len(self.heartlist)} lives left',sep=' ')
+                self.short_loos_message()
 
             else:
                 self.loosing()
@@ -41,21 +41,32 @@ class let_guess:
                     self.clue_list[i] = guess
         return self.clue_list
     
+
     def loosing(self):
-        self.heartlist.pop() #remove one heart
-        print('you lost one of your heart')
-        print(self.heartlist,f'only this {len(self.heartlist)} lives left')
+        if len(self.heartlist) < 1:
+            message = f'You lost! The word was: {self.the_word}'
+            message += f' All of your guesses: {", ".join(self.all_guesses)}'
+            return message
+        
+        self.heartlist.pop() # remove one heart
+        message = 'You lost one of your hearts.'
+        message += f' Only {len(self.heartlist)} lives left.'
+        return message
 
         if len(self.heartlist) <1: #check if lost
             self.lost()
     
     def lost(self): #lost game
-        print(f'Sory you lost :< the word was>>{self.the_word}')
-        print('all of your guesses >>','-'.join(list(self.all_guesses)))
+        message=f'Sory you lost :< the word was>>{self.the_word}'
+        message+= 'all of your guesses >>','-'.join(list(self.all_guesses))
+        return message
 
     def win(self):
-        print('well done the word was > ',''.join(self.clue_list),''.join(set(self.heartlist)))
-       
+        message=f'well done the word was > ',''.join(self.clue_list),''.join(set(self.heartlist))
+        return message
+    def short_loos_message(self):
+        message = f"{''.join(self.clue_list)}+'<< this is your guess so far ','you have {len(self.heartlist)} lives left'"
+        return message 
 
 
 
