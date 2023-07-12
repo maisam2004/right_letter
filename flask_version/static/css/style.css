@@ -1,0 +1,88 @@
+
+:root {
+    --heading-color: rgb(225, 226, 236);
+    --body-text: rgb(236, 232, 232);
+    --ideas-color: white;
+    --font-family: 'Roboto Slab', serif;
+    --font-family-letters:'PT Serif', serif;
+}
+html{
+    background-image: url(../image/);
+}
+
+
+body{
+    background-color: rgb(25, 25, 29);
+    /* font-family: var(--font-family); */
+    width: 67%;
+    margin: 8em auto;
+    border: 2px solid rgb(94, 88, 88);
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    
+}
+
+header{
+    height: 25em;
+    padding: 2em;
+    color:var(--ideas-color);
+    font-family: var(--font-family-letters);
+}
+
+
+input[value="Generate New Word"]{
+    background-color: rgb(213, 220, 220);
+    padding: 0.4em;
+    font-size: 0.8em;
+    color: rgb(27, 22, 22);
+}
+.main_form{
+    border-left: 1px solid wheat;
+    height: 29em;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-letters);
+    justify-content: center;
+    font-size: 1em;
+    font-weight: 500;
+    
+    padding-left: 0.8em;
+    max-width:12em;
+    word-wrap: break-word;
+    
+
+
+    color:var(--ideas-color);
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.entery{
+    width: 12em;
+    font-size: 1.7em;
+    margin-top: 1.6em;
+    color:rgb(190, 107, 5);
+}
+.entery input[type="text"]{
+    
+    border-bottom: 0.1em solid white ;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: rgb(35, 35, 40);
+    padding-top: 0.9em;
+    color:aqua;
+    font-size: 19px;
+
+    border-radius: 5px;
+}
+.entery input[type="submit"]{
+    background-color: bisque;
+    color:blue;
+    font-weight: 600;
+    padding: 0.4em;
+    width: 10em;
+}
+section.message{
+    display: none;
+}

@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <script src="https://kit.fontawesome.com/ecedfde1ad.js" crossorigin="anonymous"></script>
+
     <title>Hangman Game</title>
 </head>
 <body>
-    <h1>Hangman Game</h1>
-    <form action="{{ url_for('home') }}" method="post">
-        <label for="letter">Enter a letter:</label>
-        <input type="text" id="letter" name="letter" maxlength="1" required>
-        <input type="submit" value="Submit">
-    </form>
-    <form action="{{ url_for('new_word') }}" method="post">
-        <input type="submit" value="Generate New Word">
-    </form>
+    <header>
+        <h1>Hangman Game</h1>
+        <form action="{{ url_for('new_word') }}" method="post">
+            <input type="submit" value="Generate New Word">
+        </form>
+
+        <form action="{{ url_for('home') }}" class="entery" method="post">
+            <label for="letter">Enter a letter:</label><br>
+            <input type="text" id="letter" name="letter" maxlength="1" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </header>
+    <article class="main_form">
+        
+            {%if message %}
+            <p>{{ message }}</p>
+            {% endif %}
+       
+
+    </article>
+
+<section class="message">
     {%if message %}
     <p>{{ message }}</p>
     {% endif %}
+</section>
 </body>
 </html>
