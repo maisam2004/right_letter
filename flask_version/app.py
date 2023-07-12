@@ -7,6 +7,7 @@ def home():
     if request.method != 'post':
         return render_template('home.html')
     letter = request.form['letter']
+    
 
     
 
