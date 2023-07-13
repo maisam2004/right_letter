@@ -49,8 +49,8 @@ class let_guess:
             return message
         
         self.heartlist.pop() # remove one heart
-        message = 'You lost one of your hearts.'
-        message += f' Only {len(self.heartlist)} lives left.'
+        message = 'You lost one of your hearts. <i class="fa-solid fa-heart" style="color: #888b91;"></i>'
+        message += f' Only {len(self.heartlist)} <i class="fa-solid fa-heart" style="color: #888b91;"></i> left.'
         return message
 
         if len(self.heartlist) <1: #check if lost

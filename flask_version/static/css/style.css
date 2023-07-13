@@ -9,7 +9,7 @@
 }
 body{
     /* background-image: url(../image/bak4.jpg); */
-    background-color: rgb(34, 81, 81);
+    background-color: rgb(85, 73, 90);
     background-position: center;
     background-size: cover;
     
@@ -17,9 +17,10 @@ body{
 
 
 main{
-    background-color: rgb(203, 203, 203);
+    background-color: rgba(23, 14, 14, 0.646);
     /* font-family: var(--font-family); */
-    width: 60%;
+    width: 55%;
+    
     margin: 8em auto;
     border: 2px solid rgb(194, 192, 192);
     display: flex;
@@ -28,31 +29,57 @@ main{
     
 }
 
-.glassmorphism {
-    
-    background-color: rgba(171, 171, 171, 0.3);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-
 header{
-    height: 25em;
+    text-align: center;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-family-letters);
+
+    color: rgb(186, 208, 228);
+    flex-direction: column;
+
+}
+
+
+section.playcontent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+}
+section>*{
+   
+}
+
+
+article.form{
+    height: 18em;
     padding: 2em;
     color:var(--ideas-color);
     font-family: var(--font-family-letters);
 }
 
 
-input[value="Generate New Word"]{
-    background-color: rgb(213, 220, 220);
+input[value="New Word"]{
+    
     padding: 0.4em;
     font-size: 0.8em;
-    color: rgb(27, 22, 22);
+    color: rgb(174, 73, 73);
+    width: 12em;
+    background-color: rgb(46, 57, 57);
+    
 }
-.main_form{
-    border-left: 1px solid wheat;
-    height: 29em;
+input[value="New Word"]:hover{
+    
+    
+    color: rgb(39, 156, 58);
+    
+}
+.result{
+    border-left: 1px solid rgb(56, 49, 34);
+    /* height: 29em; */
     display: flex;
     flex-direction: column;
     font-family: var(--font-family-letters);
@@ -74,7 +101,7 @@ input[value="Generate New Word"]{
     width: 12em;
     font-size: 1.7em;
     margin-top: 1.6em;
-    color:rgb(190, 107, 5);
+    color:rgb(209, 117, 4);
 }
 .entery input[type="text"]{
     
@@ -82,7 +109,7 @@ input[value="Generate New Word"]{
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-    background-color: rgb(35, 35, 40);
+    background-color: rgb(62, 62, 63);
     padding-top: 0.9em;
     color:aqua;
     font-size: 19px;
@@ -106,15 +133,42 @@ input[value="Generate New Word"]{
 .entery input[type="submit"]{
     background-color: bisque;
     color:blue;
-    font-weight: 600;
+    font-weight: 700;
     padding: 0.4em;
     width: 10em;
+
+    height: 2.5em;
+
+
 }
+
+
+.entery input[type="submit"]:focus{
+    
+    height: 1.7em;
+    width: 6em;
+
+}
+
+
 section.message{
     display: none;
 }
 
-.card:hover {
-    transform: scale(1.05);
-  }
 
+@media (max-width: 1150px) {
+main{
+    width: 74%;
+    min-width: 400px;
+}
+article.form{
+    padding: 1em;
+    height: 15em;
+}
+.result{
+    margin-left:-4em;
+    padding-bottom: 2em;
+    border-left: 0px;
+}
+
+}
