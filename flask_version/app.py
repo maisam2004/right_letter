@@ -33,10 +33,10 @@ def home():
                     if l == guess:
                         clue_list[i] = guess
 
-                message = ' '.join(clue_list) + f' << This is your guess so far. You have {len(heartlist)} lives left.'
+                message = ' '.join(clue_list) + f' << This is your guess so far. You have {len(heartlist)} "\u2764"  left.'
             elif len(heartlist) > 0:
                 heartlist.pop()
-                message = f"You lost one of your lives. Only {len(heartlist)} lives left. Still continuing: {' '.join(clue_list)}"
+                message = f"Wrong. Only {len(heartlist)} \"\u2764\" left \n {' '.join(clue_list)}"
                 if len(heartlist)==0:
                      message = f"You lost! The word was: {the_word}"
             else:
@@ -50,7 +50,7 @@ def home():
     else:
         message = ''
 
-    return render_template("home.html", message=message)
+    return render_template("home.html", message=message,the_word=len(session['the_word']))
 
 @app.route('/new_word', methods=['POST'])
 def new_word():
