@@ -11,6 +11,7 @@
     <title>Hangman Game</title>
 </head>
 <body>
+    <main class="glassmorphism">
     <header>
         <h1>Hangman Game</h1>
         <form action="{{ url_for('new_word') }}" method="post">
@@ -38,5 +39,6 @@
     <p>{{ message }}</p>
     {% endif %}
 </section>
+</main>
 </body>
 </html>

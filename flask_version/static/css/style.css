@@ -5,23 +5,36 @@
     --ideas-color: white;
     --font-family: 'Roboto Slab', serif;
     --font-family-letters:'PT Serif', serif;
+    --glass-main-color:rgba(255, 255, 255, 0.3);
 }
-html{
-    background-image: url(../image/);
-}
-
-
 body{
-    background-color: rgb(25, 25, 29);
+    /* background-image: url(../image/bak4.jpg); */
+    background-color: rgb(34, 81, 81);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+
+main{
+    background-color: rgb(203, 203, 203);
     /* font-family: var(--font-family); */
-    width: 67%;
+    width: 60%;
     margin: 8em auto;
-    border: 2px solid rgb(94, 88, 88);
+    border: 2px solid rgb(194, 192, 192);
     display: flex;
     flex-wrap: wrap;
     justify-items: center;
     
 }
+
+.glassmorphism {
+    
+    background-color: rgba(171, 171, 171, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
 
 header{
     height: 25em;
@@ -48,7 +61,7 @@ input[value="Generate New Word"]{
     font-weight: 500;
     
     padding-left: 0.8em;
-    max-width:12em;
+    max-width:19em;
     word-wrap: break-word;
     
 
@@ -76,6 +89,20 @@ input[value="Generate New Word"]{
 
     border-radius: 5px;
 }
+.entery input[type="text"]:active,:focus{
+    
+    border-bottom: 0.1em solid white ;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: rgb(35, 35, 40);
+    padding-top: 0.9em;
+    color:aqua;
+    font-size: 19px;
+
+    border-radius: 5px;
+}
+
 .entery input[type="submit"]{
     background-color: bisque;
     color:blue;
@@ -86,3 +113,8 @@ input[value="Generate New Word"]{
 section.message{
     display: none;
 }
+
+.card:hover {
+    transform: scale(1.05);
+  }
+
