@@ -16,15 +16,21 @@
     <main>
         <header>
             <h1>Hangman Game</h1>
-
+            
             <form action="{{ url_for('new_word') }}" method="post">
                 <input type="submit" value="New Word">
             </form>
+            {% if hearts%}
+            {% autoescape false%}
+            <h4>{{hearts}}</h4>
+            {% endautoescape %}
+
+            {%endif%}
         </header>
         <section class="playcontent">
         <article class="form">
             {% if the_word %}
-            <h3>the word lenght {{the_word}}</h3>
+            <h4>the word has {{the_word}} letters </h4>
             {% endif %}
             <form action="{{ url_for('home') }}" class="entery" method="post">
                 <label for="letter">Enter a letter:</label><br>
@@ -34,7 +40,8 @@
             </form>
         </article>
         <article class="result">
-
+           
+                
             {%if message %}
                 {% autoescape false%}
 

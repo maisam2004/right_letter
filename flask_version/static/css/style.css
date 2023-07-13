@@ -9,7 +9,7 @@
 }
 body{
     /* background-image: url(../image/bak4.jpg); */
-    background-color: rgb(85, 73, 90);
+    background-color: rgb(49, 66, 14);
     background-position: center;
     background-size: cover;
     
@@ -19,7 +19,7 @@ body{
 main{
     background-color: rgba(23, 14, 14, 0.646);
     /* font-family: var(--font-family); */
-    width: 55%;
+    width: 50%;
     
     margin: 8em auto;
     border: 2px solid rgb(194, 192, 192);
@@ -30,7 +30,8 @@ main{
 }
 
 header{
-    text-align: center;
+    /* text-align: center; */
+    padding-left: 1.9em;
     width:100%;
     display: flex;
     justify-content: center;
@@ -39,6 +40,13 @@ header{
     color: rgb(186, 208, 228);
     flex-direction: column;
 
+}
+
+body > main > header > h4{
+    align-self: flex-end;
+    padding-right: 1em;
+    margin-top: -0.9em;
+    color:rgb(9, 199, 53);
 }
 
 
@@ -97,7 +105,10 @@ input[value="New Word"]:hover{
     word-break: break-all;
     word-wrap: break-word;
 }
-
+span.won{
+    font-size: larger;
+    color: rgb(241, 30, 241);
+}
 .clulist{
     font-size: larger;
     text-decoration-line: underline;
@@ -162,6 +173,13 @@ section.message{
 
 
 @media (max-width: 1150px) {
+section.playcontent{
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+
 main{
     width: 74%;
     min-width: 400px;
@@ -171,7 +189,7 @@ article.form{
     height: 15em;
 }
 .result{
-    margin-left:-4em;
+    
     padding-bottom: 2em;
     border-left: 0px;
 }

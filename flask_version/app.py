@@ -36,21 +36,22 @@ def home():
                 message = '<span class="clulist" style=\"color:#e4c607;\"> <br/>'+ ' '.join(clue_list) + f'</span > << Good guess . {len(heartlist)} "\u2764"  left.<span>'
             elif len(heartlist) > 0:
                 heartlist.pop()
-                message = f"Wrong. {len(heartlist)} <i class=\"fa-solid fa-heart fa-beat fa-xs\" style=\"color: #e4c607;\"></i> left <span class=\"clulist\" style=\"color:#e4c607;\"> {' '.join(clue_list)}</span>"
+                message = f"Wrong. {len(heartlist)} <i class=\"fa-solid fa-heart fa-beat fa-xs\" style=\"color: #e4c607;\"></i> left <span class=\"clulist\" style=\"color:#e4c607;\"><br> {' '.join(clue_list)}</span>"
                 if len(heartlist)==0:
+                    
                      message = f"You lost! The word was: {the_word}"
             else:
                 message = f"You lost! The word was: {the_word}"
 
             if '?' not in clue_list:
-                message = 'Well done! The word was: ' + ' '.join(clue_list)
+                message = 'Well done! The word was: <span class="won">' + ' '.join(clue_list)+'</span>'
 
         session['clue_list'] = clue_list
         session['heartlist'] = heartlist
     else:
         message = ''
 
-    return render_template("home.html", message=message,the_word=len(session['the_word']))
+    return render_template("home.html", message=message,the_word=len(session['the_word']),hearts=str(len(heartlist))+' '+'<i class=\"fa-solid fa-heart fa-beat fa-xs\" style=\"color: #e4c607;\"></i>')
 
 @app.route('/new_word', methods=['POST'])
 def new_word():
