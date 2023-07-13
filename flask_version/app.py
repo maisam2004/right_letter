@@ -33,10 +33,10 @@ def home():
                     if l == guess:
                         clue_list[i] = guess
 
-                message = ' '.join(clue_list) + f' << This is your guess so far. You have {len(heartlist)} "\u2764"  left.'
+                message = '<span class="clulist" style=\"color:#e4c607;\"> <br/>'+ ' '.join(clue_list) + f'</span > << Good guess . {len(heartlist)} "\u2764"  left.<span>'
             elif len(heartlist) > 0:
                 heartlist.pop()
-                message = f"Wrong. Only {len(heartlist)} \"\u2764\" left \n {' '.join(clue_list)}"
+                message = f"Wrong. {len(heartlist)} <i class=\"fa-solid fa-heart fa-beat fa-xs\" style=\"color: #e4c607;\"></i> left <span class=\"clulist\" style=\"color:#e4c607;\"> {' '.join(clue_list)}</span>"
                 if len(heartlist)==0:
                      message = f"You lost! The word was: {the_word}"
             else:

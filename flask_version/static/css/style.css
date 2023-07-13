@@ -97,6 +97,11 @@ input[value="New Word"]:hover{
     word-break: break-all;
     word-wrap: break-word;
 }
+
+.clulist{
+    font-size: larger;
+    text-decoration-line: underline;
+}
 .entery{
     width: 12em;
     font-size: 1.7em;

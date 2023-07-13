@@ -36,7 +36,11 @@
         <article class="result">
 
             {%if message %}
-            <p>{{ message }}</p>
+                {% autoescape false%}
+
+                <p>{{ message }}</p>
+
+                {% endautoescape %}
             {% endif %}
 
 
@@ -44,6 +48,10 @@
     </section>
 
     </main>
+    {% autoescape false %}
+    <p>{{ will_not_be_escaped }}</p>
+    {% endautoescape %}
+
     <section class="message">
         {%if message %}
         <p>{{ message }}</p>
