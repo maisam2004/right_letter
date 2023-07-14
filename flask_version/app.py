@@ -11,7 +11,7 @@ def generate_word():
 
 def initialize_game():
     session['the_word'] = generate_word()
-    session['clue_list'] = ['?'] * len(session['the_word'])
+    session['clue_list'] = ['_'] * len(session['the_word'])
     session['heartlist'] = list("\u2764" * 9)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -33,17 +33,17 @@ def home():
                     if l == guess:
                         clue_list[i] = guess
 
-                message = '<span class="clulist" style=\"color:#e4c607;\"> <br/>'+ ' '.join(clue_list) + f'</span > << Good guess . {len(heartlist)} "\u2764"  left.<span>'
+                message = '<span class="clulist" style=\"color:#e4c607;\"> <br/>'+ f'</span > << Good guess . {len(heartlist)} "\u2764"  left.<span>'
             elif len(heartlist) > 0:
                 heartlist.pop()
-                message = f"Wrong. {len(heartlist)} <i class=\"fa-solid fa-heart fa-beat fa-xs\" style=\"color: #e4c607;\"></i> left <span class=\"clulist\" style=\"color:#e4c607;\"><br> {' '.join(clue_list)}</span>"
+                message = f"Wrong. try again"
                 if len(heartlist)==0:
                     
                      message = f"You lost! The word was: {the_word}"
             else:
                 message = f"You lost! The word was: {the_word}"
 
-            if '?' not in clue_list:
+            if '_' not in clue_list:
                 message = 'Well done! The word was: <span class="won">' + ' '.join(clue_list)+'</span>'
 
         session['clue_list'] = clue_list
@@ -51,7 +51,7 @@ def home():
     else:
         message = ''
 
-    return render_template("home.html", message=message,the_word=len(session['the_word']),hearts=str(len(heartlist))+' '+'<i class=\"fa-solid fa-heart fa-beat fa-xs\" style=\"color: #e4c607;\"></i>')
+    return render_template("home.html", message=message,the_word=len(session['the_word']),hearts=str(len(heartlist))+' '+'<i class=\"fa-solid fa-heart fa-beat fa-xs\" style=\"color: #e4c607;\"></i>',clue=' '.join(clue_list))
 
 @app.route('/new_word', methods=['POST'])
 def new_word():

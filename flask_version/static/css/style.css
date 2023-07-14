@@ -7,21 +7,30 @@
     --font-family-letters:'PT Serif', serif;
     --glass-main-color:rgba(255, 255, 255, 0.3);
 }
+body {
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+
 body{
     /* background-image: url(../image/bak4.jpg); */
-    background-color: rgb(49, 66, 14);
+    
+    background-image: url(../image/bak2.jpg);
     background-position: center;
     background-size: cover;
-    
+    background-repeat:repeat;
 }
 
 
 main{
-    background-color: rgba(23, 14, 14, 0.646);
+    background-color: rgba(10, 7, 7, 0.792);
     /* font-family: var(--font-family); */
-    width: 50%;
+    width: 45%;
     
-    margin: 8em auto;
+    margin: 12em auto;
     border: 2px solid rgb(194, 192, 192);
     display: flex;
     flex-wrap: wrap;
@@ -64,7 +73,8 @@ section>*{
 
 article.form{
     height: 18em;
-    padding: 2em;
+    padding-right: 2em;
+    padding-left: 2em;
     color:var(--ideas-color);
     font-family: var(--font-family-letters);
 }
@@ -86,7 +96,7 @@ input[value="New Word"]:hover{
     
 }
 .result{
-    border-left: 1px solid rgb(56, 49, 34);
+    border-left: 3px solid rgb(56, 49, 34);
     /* height: 29em; */
     display: flex;
     flex-direction: column;
@@ -110,9 +120,13 @@ span.won{
     color: rgb(241, 30, 241);
 }
 .clulist{
-    font-size: larger;
-    text-decoration-line: underline;
+    font-size:2.7em;
+    margin-top: -0.8em;
+    color: #e4c607;
 }
+
+
+
 .entery{
     width: 12em;
     font-size: 1.7em;
@@ -173,6 +187,26 @@ section.message{
 
 
 @media (max-width: 1150px) {
+ 
+    
+
+body{
+    overflow: hidden;
+    background-image: none;
+    background-color: rgb(8, 8, 35);
+    
+}
+
+
+
+main{
+    margin: 1em auto;
+    width: 54%;
+    min-width: 375px;
+    background-image: url(../image/bak1.jpg);
+    background-position: right;
+}
+
 section.playcontent{
     flex-direction: column;
     flex-wrap: wrap;
@@ -180,10 +214,6 @@ section.playcontent{
 }
 
 
-main{
-    width: 74%;
-    min-width: 400px;
-}
 article.form{
     padding: 1em;
     height: 15em;
@@ -192,6 +222,8 @@ article.form{
     
     padding-bottom: 2em;
     border-left: 0px;
+    padding-left: 1.4em;
+    align-self: center;
 }
 
 }
